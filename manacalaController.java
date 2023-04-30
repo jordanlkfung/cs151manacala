@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 public class manacalaController{
-	manacalaData data;
-	public manacalaController(manacalaData ref) {
+	ManacalaData data;
+	public manacalaController(ManacalaData ref) {
 		data=ref;
 		JButton undoButton = new JButton("undo");
 		undoButton.addActionListener(

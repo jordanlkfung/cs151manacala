@@ -39,6 +39,7 @@ public class ManacalaView extends JPanel implements ChangeListener{
 		}
 		this.setLayout(new BorderLayout());
 		this.add(pits,BorderLayout.CENTER);
+		userA[1].setIcon(new CircleIcon(4));
 	}
 	@Override
 	public void stateChanged(ChangeEvent e) {

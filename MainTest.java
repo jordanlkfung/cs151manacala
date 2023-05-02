@@ -9,11 +9,14 @@ public class MainTest{
 //		view.setLayout(new FlowLayout());
 		test.setLayout(new BorderLayout());
 //		view.add(new JButton("TA"));
-		test.add(new JButton("A"),BorderLayout.EAST);
+//		test.add(new JButton("A"),BorderLayout.EAST);
 		test.add(view, BorderLayout.CENTER);
 
 		test.setVisible(true);
 		test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		test.setSize(400,400);
+		test.setMaximumSize(new Dimension(400,400));
+		test.setMinimumSize(new Dimension(400,400));
+
 	}
 }

@@ -3,15 +3,15 @@ import javax.swing.*;
 
 public class MainTest{
 	public static void main(String args[]) {
-		ManacalaView view = new ManacalaView();
+		MancalaData data = new MancalaData(1);
+		TopView top = new TopView(data);
+		MancalaView view = new MancalaView(data);
+		data.addChangeListener(view);
+		data.addChangeListener(top);
 		JFrame test = new JFrame();
-//		JPanel view = new JPanel();
-//		view.setLayout(new FlowLayout());
 		test.setLayout(new BorderLayout());
-//		view.add(new JButton("TA"));
-//		test.add(new JButton("A"),BorderLayout.EAST);
 		test.add(view, BorderLayout.CENTER);
-
+		test.add(top,BorderLayout.NORTH);
 		test.setVisible(true);
 		test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		test.setSize(400,400);

@@ -13,7 +13,7 @@ public class CircleIcon implements Icon {
         @Override
         public void paintIcon(Component c, Graphics g, int x, int y) {
             Graphics2D g2 = (Graphics2D) g;
-            Random rand = new Random();
+//            Random rand = new Random();
             int numRows = (int) Math.ceil(Math.sqrt(numCircles));
             int numCols = (int) Math.ceil((double) numCircles / numRows);
             int totalWidth = numCols * CIRCLE_SIZE + (numCols - 1) * PADDING;
@@ -28,7 +28,8 @@ public class CircleIcon implements Icon {
                     }
                     int centerX = startX + col * (CIRCLE_SIZE + PADDING) + CIRCLE_SIZE / 2;
                     int centerY = startY + row * (CIRCLE_SIZE + PADDING) + CIRCLE_SIZE / 2;
-                    Color color = new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+//                    Color color = new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+                    Color color = new Color(65,105,225);
                     g2.setColor(color);
                     g2.fillOval(centerX - CIRCLE_SIZE / 2, centerY - CIRCLE_SIZE / 2, CIRCLE_SIZE, CIRCLE_SIZE);
                     numCircles--;

@@ -9,7 +9,6 @@ public class CircleIcon implements Icon {
         public CircleIcon(int numCircles) {
             this.numCircles = numCircles;
         }
-
         @Override
         public void paintIcon(Component c, Graphics g, int x, int y) {
             Graphics2D g2 = (Graphics2D) g;

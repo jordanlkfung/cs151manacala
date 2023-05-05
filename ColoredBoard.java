@@ -1,14 +1,25 @@
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-
+/**
+ * ColoredBoard is a class that implements the DisplayStrategy interface. It displays the mancala board and
+ * pits using a colored background.
+ * @author Jordan Fung
+ * @version 1.0
+ */
+import java.awt.*;
 import javax.swing.JFrame;
 
 public class ColoredBoard implements DisplayStrategy {
 	MancalaData data;
+	/**
+	 * Constructs a new ColoredBoard object with the specified MancalaData object.
+	 * 
+	 * @param d the MancalaData object containing the game data
+	 */
 	public ColoredBoard(MancalaData d) {
 		data=d;
 	}
+	/**
+	 * Displays the mancala board and pits using a colored background.
+	 */
 	@Override
 	public void display() {
 		TopView top = new TopView(data);
@@ -25,8 +36,8 @@ public class ColoredBoard implements DisplayStrategy {
 		test.add(top,BorderLayout.NORTH);
 		test.setVisible(true);
 		test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		test.setSize(400,400);
-		test.setMaximumSize(new Dimension(400,400));
-		test.setMinimumSize(new Dimension(400,400));
+		test.setSize(600,550);
+//		test.setMaximumSize(new Dimension(400,400));
+//		test.setMinimumSize(new Dimension(400,400));
 	}
 }

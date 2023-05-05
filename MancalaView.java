@@ -1,10 +1,20 @@
 import javax.swing.event.*;
 import javax.swing.*;
 import java.awt.*;
+/**
+ * ManacalaView class for showing the all the pits on the board
+ * @author jordanfung
+ *
+ */
 public class MancalaView extends JPanel implements ChangeListener{
 	JButton[] userA= new JButton[7];
 	JButton[] userB= new JButton[7];
 	MancalaData mData;
+	/**
+	 * Constructor for creating a new Mancala view.
+	 * 
+	 * @param d the MancalaData instance that is being used for the game
+	 */
 	public MancalaView(MancalaData d) {
 		mData=d;
 		JLabel pits = new JLabel();
@@ -53,7 +63,7 @@ public class MancalaView extends JPanel implements ChangeListener{
 		userA[userA.length-1].setVerticalTextPosition(SwingConstants.BOTTOM);
 		userA[userA.length-1].setHorizontalTextPosition(SwingConstants.RIGHT);
 		userA[6].setFocusPainted(false);
-		userA[6].setPreferredSize(new Dimension(80,100));
+		userA[6].setPreferredSize(new Dimension(80,400));
 		userA[6].addActionListener(e->updatePits());
 		userB[userB.length-1]= new JButton();
 		userB[userA.length-1].setText("<html>M<br>a<br>n<br>c<br>a<br>l<br>a<br><br>B</html>");
@@ -75,11 +85,19 @@ public class MancalaView extends JPanel implements ChangeListener{
 		this.add(userB[userB.length-1],BorderLayout.WEST);
 		updatePits();
 	}
+	/**
+	 * Invoked when a change event occurs in the MancalaData object. 
+	 * Updates the icons attached to the buttons 
+	 * @param e the change event
+	 */
 	@Override
 	public void stateChanged(ChangeEvent e) {
 		updatePits();
 		
 	}
+	/**
+	 * updates the pit with new icons
+	 */
 	public void updatePits() {
 		for(int i=0;i<userA.length;i++) {
 			userA[i].setIcon(new CircleIcon(mData.getPit(1, i)));

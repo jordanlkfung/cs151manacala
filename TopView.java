@@ -1,6 +1,10 @@
 import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.*;
+/**
+ * Constructs a new TopView object with the given MancalaData object reference.
+ * @param ref the MancalaData object reference
+ */
 public class TopView extends JPanel implements ChangeListener{
 	MancalaData data;
 	JLabel text = new JLabel();
@@ -33,10 +37,12 @@ public class TopView extends JPanel implements ChangeListener{
 				data.undo();
 		});
 		undoButton.setFocusPainted(false);
-//		this.add(text);
-//		this.add(undoButton);
 		this.add(selection);
 	}
+	/**
+	 * Invoked when a change event occurs in the MancalaData object. Updates the text label to display the current player's turn.
+	 * @param e the change event
+	 */
 	@Override
 	public void stateChanged(ChangeEvent e) {
 		if(data.getUser()==1)
